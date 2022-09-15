@@ -10,8 +10,5 @@
         <module name="test-automation-boilerplate-java" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="test-automation-boilerplate-java" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
