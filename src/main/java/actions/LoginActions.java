@@ -13,7 +13,7 @@ public class LoginActions extends UIInteractionSteps {
     @Step("Log in as {0}")
     public void as (User user) throws Exception {
         loginPage.waitForLoad(10);
-        
+
         // Login as a standard user
         loginPage.login(user);
     }

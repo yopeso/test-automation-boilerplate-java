@@ -1,37 +1,64 @@
 package serenityswag.authentication;
 
+
 import actions.LoginActions;
-import net.serenitybdd.core.Serenity;
-import net.serenitybdd.junit.runners.SerenityRunner;
+import pages.InventoryPage;
+import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
-import pages.InventoryPage;
-import skynet.Statics;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import skynet.hooks.JUnit5.TestrailPublisher;
+
 import static utils.User.STANDARD_USER;
 
-@RunWith(SerenityRunner.class)
+/**
+ Whenever your intention is to run the tests and publish the results in Testrail either add:
+
+ @ TestrailPublisher annotation before your class declaration OR add TestRailPublisherExtension.class to @ExtendWith annotation */
+
+@TestrailPublisher
+@ExtendWith (SerenityJUnit5Extension.class)
+@DisplayName ("My test suite")
 public class WhenLoggingOnTest {
 
     @Managed//    @Managed(driver = "chrome")
     WebDriver driver;
     @Steps
     LoginActions login;
-
     InventoryPage inventoryPage;
 
+
     @Test
-    public void usersCanLogOnViaTheHomePage () throws Exception {
+    @DisplayName ("1562447 - This is my first test")
+    public void usersCanLogOnViaTheHomePage() throws Exception {
+
+        login.as(STANDARD_USER);
+
+        inventoryPage.waitForIncorrectLoad(10);
+        inventoryPage.validatePageTitle();
+    }
+
+    @Test
+    @DisplayName ("1562448 - This is my first test")
+    public void usersCanSeeProductPage() throws Exception {
 
         login.as(STANDARD_USER);
 
         inventoryPage.waitForLoad(10);
-        // Should see product catalog
         inventoryPage.validatePageTitle();
+    }
+
+    @Test
+    @DisplayName ("1562449 - This is my first test")
+    public void usersCanFailTests() throws Exception {
+
+        login.as(STANDARD_USER);
+
+        inventoryPage.waitForLoad(10);
+        inventoryPage.failValidatePageTitle();
     }
 }
