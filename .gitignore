@@ -13,3 +13,4 @@ buildNumber.properties
 **/secrets.properties
 **/testrail.properties
 .reports
+**/.DS_Store
