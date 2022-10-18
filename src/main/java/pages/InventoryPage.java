@@ -1,8 +1,5 @@
 package pages;
 
-import net.serenitybdd.core.pages.PageObject;
-
-import skynet.Statics;
 import skynet.interactions.Elements;
 import skynet.interactions.Wait;
 import skynet.interfaces.IWebPage;
@@ -11,14 +8,14 @@ import skynet.utils.AHCustomAsserts;
 import repos.InventoryPageRepo;
 
 
-public class InventoryPage extends PageObject implements IWebPage {
+public class InventoryPage extends BasePage implements IWebPage {
 
     public InventoryPage() throws Exception {
-
+        super(InventoryPageRepo.class);
     }
 
     public String getHeading() {
-        return Elements.getText(InventoryPageRepo.RepositoryEnum.PageTitle.name());
+        return Elements.getText(InventoryPageRepo.PageTitle);
     }
 
     public void validatePageTitle() throws Exception {
@@ -31,12 +28,10 @@ public class InventoryPage extends PageObject implements IWebPage {
 
     @Override
     public void waitForLoad(int pageLoadTimeout) throws Exception {
-        Statics.setRepoName(InventoryPageRepo.class.getName());
-        Wait.waitForExists(InventoryPageRepo.RepositoryEnum.PageTitle.name(), 10, true);
+        Wait.waitForExists(InventoryPageRepo.PageTitle, 10, true);
     }
 
     public void waitForIncorrectLoad(int pageLoadTimeout) throws Exception {
-        Statics.setRepoName(InventoryPageRepo.class.getName());
-        Wait.waitForExists(InventoryPageRepo.RepositoryEnum.IncorrectPageTitle.name(), 10, true);
+        Wait.waitForExists(InventoryPageRepo.IncorrectPageTitle, 10, true);
     }
 }

@@ -39,7 +39,7 @@
         <dependency>
             <groupId>com.skynet.framework.java</groupId>
             <artifactId>skynet-framework-java</artifactId>
-            <version>1.0.104</version>
+            <version>1.0.105</version>
         </dependency>
         <dependency>
             <groupId>com.skynet.testrail.publisher</groupId>
@@ -76,9 +76,14 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>8.2.0</version>
+        </dependency>
+        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.4.0</version>
+            <version>1.4.1</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
