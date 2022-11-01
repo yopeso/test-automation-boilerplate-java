@@ -2,6 +2,10 @@ package serenityswag.authentication;
 
 
 import actions.LoginActions;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import pages.InventoryPage;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.thucydides.core.annotations.Managed;
@@ -12,6 +16,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 
 import skynet.hooks.JUnit5.TestrailPublisher;
+import skynet.mobile.AppiumServer;
+import skynet.mobile.PlatformCheck;
+
 
 import static utils.User.STANDARD_USER;
 
@@ -25,6 +32,11 @@ import static utils.User.STANDARD_USER;
 @DisplayName ("My test suite")
 public class WhenLoggingOnTest {
 
+    @BeforeAll
+    public static void before(){
+        PlatformCheck.initDriver();
+    }
+
     @Managed//    @Managed(driver = "chrome")
     WebDriver driver;
     @Steps
@@ -35,9 +47,7 @@ public class WhenLoggingOnTest {
     @Test
     @DisplayName ("1562447 - This is my first test")
     public void usersCanLogOnViaTheHomePage() throws Exception {
-
         login.as(STANDARD_USER);
-
         inventoryPage.waitForIncorrectLoad(10);
         inventoryPage.validatePageTitle();
     }
@@ -61,4 +71,10 @@ public class WhenLoggingOnTest {
         inventoryPage.waitForLoad(10);
         inventoryPage.failValidatePageTitle();
     }
+
+    @AfterAll
+    public static void after(){
+        AppiumServer.stopAppiumServer();
+    }
+
 }
