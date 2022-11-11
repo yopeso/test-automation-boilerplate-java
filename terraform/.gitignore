@@ -1,0 +1,6 @@
+.env
+*.plan
+*.terraform*
+*.tfstate*
+*.DS_Store
+*.tfplan
