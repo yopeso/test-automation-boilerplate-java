@@ -85,7 +85,7 @@ resource "aws_eip" "skynet_eip" {
 }
 
 data "aws_eip" "skynet_eip" {
-  public_ip = "18.159.197.193"
+  public_ip = "18.198.145.32"
 }
 
 resource "aws_eip_association" "eip_assoc" {
