@@ -1,0 +1,131 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+
+references:
+  saveCache: &saveCache
+    save_cache:
+      key: v1-dependencies-{{ checksum "pom.xml" }}
+      paths:
+        - ~/.m2
+
+  restoreCache: &restoreCache
+    restore_cache:
+      keys:
+        - v1-dependencies-{{ checksum "pom.xml" }}
+        # fallback to using the latest cache if no exact match is found
+        - v1-dependencies-
+
+executors:
+  terraform:
+    docker:
+      - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
+  maven:
+    docker:
+      - image: cimg/openjdk:17.0.3
+
+jobs:
+  build-selenium-grid:
+    working_directory: /tmp/project
+    executor: terraform
+    steps:
+      - checkout
+      - run:
+          name: terraform init & plan
+          command: |
+            cd terraform
+            terraform --version
+            terraform init -input=false
+            terraform validate
+            terraform plan -out tfapply
+      - run:
+          name: terraform apply plan
+          command: |
+            cd terraform
+            terraform apply -auto-approve tfapply
+            echo "Sleeping 3m and wait for EC2 to initialize until I find a better solution!"
+            sleep 3m
+      - run:
+          name: prepare destroy plan
+          command: |
+            cd terraform
+            terraform plan -destroy -out tfdestroy
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  destroy:
+    executor: terraform
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: terraform destroy
+          command: |
+            cd terraform
+            terraform apply -auto-approve tfdestroy
+
+  build-test-environment:
+    executor: maven
+    steps:
+      - checkout
+      - run:
+          command: |
+            mvn -s .circleci/settings.xml clean validate compile
+      - *saveCache
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
+
+  test-chrome:
+    executor: maven
+    steps:
+      - checkout
+      - *restoreCache
+      - run:
+          name: Running Chrome tests
+          command: |
+            mvn -s .circleci/settings.xml verify -Dbrowser=chrome -DlogLevel=INFO -DseleniumHub=${SELENIUM_HUB_ADDRESS} -Dmaven.test.failure.ignore=true
+
+  test-firefox:
+    executor: maven
+    steps:
+      - checkout
+      - *restoreCache
+      - run:
+          name: Running Chrome tests
+          command: |
+            mvn -s .circleci/settings.xml verify -Dbrowser=firefox -DlogLevel=INFO -DseleniumHub=${SELENIUM_HUB_ADDRESS} -Dmaven.test.failure.ignore=true
+
+
+workflows:
+  version: 2
+  e2e_testing:
+    jobs:
+      - build-selenium-grid
+      - hold-destroy:
+          type: approval
+          requires:
+            - build-selenium-grid
+      - destroy:
+          requires:
+            - hold-destroy
+      - build-test-environment:
+          requires:
+            - build-selenium-grid
+      - hold-chrome-tests:
+          type: approval
+          requires:
+            - build-test-environment
+      - hold-firefox-tests:
+          type: approval
+          requires:
+            - build-test-environment
+      - test-chrome:
+          requires:
+            - hold-chrome-tests
+      - test-firefox:
+          requires:
+            - hold-firefox-tests
