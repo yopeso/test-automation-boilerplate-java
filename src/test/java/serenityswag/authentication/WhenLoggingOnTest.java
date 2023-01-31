@@ -1,8 +1,8 @@
 package serenityswag.authentication;
 
 
-import actions.LoginActions;
-import pages.InventoryPage;
+import steps.LoginSteps;
+import actions.InventoryPage;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -11,8 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 
-import skynet.hooks.JUnit5.TestrailPublisher;
-
 import static utils.User.STANDARD_USER;
 
 /**
@@ -20,7 +18,7 @@ import static utils.User.STANDARD_USER;
 
  @ TestrailPublisher annotation before your class declaration OR add TestRailPublisherExtension.class to @ExtendWith annotation */
 
-@TestrailPublisher
+//@TestrailPublisher
 @ExtendWith (SerenityJUnit5Extension.class)
 @DisplayName ("My test suite")
 public class WhenLoggingOnTest {
@@ -29,14 +27,13 @@ public class WhenLoggingOnTest {
     @Managed
     WebDriver driver;
     @Steps
-    LoginActions login;
+    LoginSteps login;
     InventoryPage inventoryPage;
 
 
     @Test
     @DisplayName ("1562447 - This is my first test")
     public void usersCanLogOnViaTheHomePage() throws Exception {
-
         login.as(STANDARD_USER);
 
         inventoryPage.waitForIncorrectLoad(10);
@@ -46,7 +43,6 @@ public class WhenLoggingOnTest {
     @Test
     @DisplayName ("1562448 - This is my first test")
     public void usersCanSeeProductPage() throws Exception {
-
         login.as(STANDARD_USER);
 
         inventoryPage.waitForLoad(10);
@@ -56,7 +52,6 @@ public class WhenLoggingOnTest {
     @Test
     @DisplayName ("1562449 - This is my first test")
     public void usersCanFailTests() throws Exception {
-
         login.as(STANDARD_USER);
 
         inventoryPage.waitForLoad(10);
@@ -66,7 +61,6 @@ public class WhenLoggingOnTest {
     @Test
     @DisplayName ("1563812 - This is my first test")
     public void usersCanSeeProductPageDuplicate() throws Exception {
-
         login.as(STANDARD_USER);
 
         inventoryPage.waitForLoad(10);

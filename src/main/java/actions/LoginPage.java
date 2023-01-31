@@ -1,8 +1,5 @@
-package pages;
+package actions;
 
-import net.serenitybdd.core.pages.PageObject;
-
-import net.thucydides.core.annotations.DefaultUrl;
 import skynet.interactions.Clicks;
 import skynet.interactions.Type;
 import skynet.interactions.Wait;
@@ -10,15 +7,16 @@ import skynet.interfaces.IWebPage;
 
 import repos.LoginPageRepo;
 
+import steps.BasePage;
 import utils.User;
 
-@DefaultUrl ("https://www.saucedemo.com/")
-public class LoginPage extends PageObject implements IWebPage {
+public class LoginPage extends BasePage implements IWebPage {
     public LoginPage () throws Exception {
         this(10000);
     }
 
     public LoginPage (int timeout) throws Exception {
+        super(LoginPageRepo.class);
         open();
     }
 

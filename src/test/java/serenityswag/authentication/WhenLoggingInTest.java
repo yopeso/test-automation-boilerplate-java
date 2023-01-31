@@ -1,7 +1,7 @@
 package serenityswag.authentication;
 
 
-import actions.LoginActions;
+import steps.LoginSteps;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
-import pages.InventoryPage;
+import actions.InventoryPage;
 import skynet.hooks.JUnit5.TestrailPublisherExtension;
 
 import static utils.User.STANDARD_USER;
@@ -27,7 +27,7 @@ public class WhenLoggingInTest {
     @Managed
     WebDriver driver;
     @Steps
-    LoginActions login;
+    LoginSteps login;
     InventoryPage inventoryPage;
 
 
