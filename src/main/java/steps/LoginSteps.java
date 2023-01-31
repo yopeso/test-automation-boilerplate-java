@@ -1,17 +1,17 @@
-package actions;
+package steps;
 
 import net.serenitybdd.core.steps.UIInteractionSteps;
+import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Step;
-
-import pages.LoginPage;
-
+import actions.LoginPage;
 import utils.User;
 
-public class LoginActions extends UIInteractionSteps {
+@DefaultUrl("google.com")
+public class LoginSteps extends UIInteractionSteps {
     LoginPage loginPage;
 
-    @Step("Log in as {0}")
-    public void as (User user) throws Exception {
+    @Step ("Login as {0}")
+    public void as(User user) throws Exception {
         loginPage.waitForLoad(10);
 
         // Login as a standard user

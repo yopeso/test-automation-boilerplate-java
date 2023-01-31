@@ -1,4 +1,4 @@
-package pages;
+package actions;
 
 import skynet.interactions.Elements;
 import skynet.interactions.Wait;
@@ -6,6 +6,7 @@ import skynet.interfaces.IWebPage;
 import skynet.utils.AHCustomAsserts;
 
 import repos.InventoryPageRepo;
+import steps.BasePage;
 
 
 public class InventoryPage extends BasePage implements IWebPage {

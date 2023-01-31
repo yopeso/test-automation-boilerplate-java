@@ -1,4 +1,4 @@
-package pages;
+package steps;
 
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.PageObject;
