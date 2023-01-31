@@ -20,12 +20,13 @@ import static utils.User.STANDARD_USER;
 
  @ TestrailPublisher annotation before your class declaration OR add TestRailPublisherExtension.class to @ExtendWith annotation */
 
-//@TestrailPublisher
+@TestrailPublisher
 @ExtendWith (SerenityJUnit5Extension.class)
 @DisplayName ("My test suite")
 public class WhenLoggingOnTest {
 
-    @Managed//    @Managed(driver = "chrome")
+//    @Managed(driver = "appium")
+    @Managed
     WebDriver driver;
     @Steps
     LoginActions login;
@@ -60,5 +61,15 @@ public class WhenLoggingOnTest {
 
         inventoryPage.waitForLoad(10);
         inventoryPage.failValidatePageTitle();
+    }
+
+    @Test
+    @DisplayName ("1563812 - This is my first test")
+    public void usersCanSeeProductPageDuplicate() throws Exception {
+
+        login.as(STANDARD_USER);
+
+        inventoryPage.waitForLoad(10);
+        inventoryPage.validatePageTitle();
     }
 }
