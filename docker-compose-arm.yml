@@ -17,11 +17,11 @@ services:
       - SE_NODE_MAX_SESSIONS=1
   #      - SE_NODE_SESSION_TIMEOUT=180
 
-#  chrome-01:
-#    <<: *selenium-chrome
-#
-#  chrome-02:
-#    <<: *selenium-chrome
+  chrome-01:
+    <<: *selenium-chrome
+
+  chrome-02:
+    <<: *selenium-chrome
 
   #  edge:
   #    image: selenium/node-edge:4.5.0-20221017

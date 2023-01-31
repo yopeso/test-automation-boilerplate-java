@@ -1,0 +1,55 @@
+# To execute this docker-compose yml file use `docker-compose -f docker-compose-arm.yml up`
+# Add the `-d` flag at the end for detached execution
+# To stop the execution, hit Ctrl+C, and then `docker-compose -f docker-compose-arm.yml down`
+version: "3"
+services:
+  selenium_hub:
+    image: selenium/hub:3.14.0-curium
+    container_name: selenium_hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+  # Using Appium Docker Android
+  appium_server:
+    image: appium/appium
+    depends_on:
+      - selenium_hub
+    network_mode: "service:selenium_hub"
+    privileged: true
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - ~/.android:/root/.android
+      - $PWD/example/sample_apk:/root/tmp
+    environment:
+      - CONNECT_TO_GRID=true
+      - SELENIUM_HOST=selenium_hub
+      - RELAXED_SECURITY=true
+      # Enable it for msite testing
+      #- BROWSER_NAME=chrome
+
+  # Docker-Android for Android application testing
+  nexus_emulator:
+    image: budtmo/docker-android-x86-10.0
+    privileged: true
+    # Increase scale number if needed
+    scale: 1
+    depends_on:
+      - selenium_hub
+      - appium_server
+    ports:
+      - "6080:6080"
+      - "4723:4723"
+      - "5554:5554"
+      - "5555:5555"
+    # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
+    volumes:
+      - $PWD/example/sample_apk:/root/tmp/sample_apk
+      - ./video-nexus_7.1.1:/tmp/video
+    environment:
+      - DEVICE=Nexus 5
+      - CONNECT_TO_GRID=true
+      - APPIUM=true
+      - SELENIUM_HOST=selenium_hub
+      - AUTO_RECORD=true
+

@@ -2,6 +2,7 @@ package pages;
 
 import net.serenitybdd.core.pages.PageObject;
 
+import net.thucydides.core.annotations.DefaultUrl;
 import skynet.interactions.Clicks;
 import skynet.interactions.Type;
 import skynet.interactions.Wait;
@@ -11,7 +12,7 @@ import repos.LoginPageRepo;
 
 import utils.User;
 
-//@DefaultUrl("https://www.saucedemo.com/")
+@DefaultUrl ("https://www.saucedemo.com/")
 public class LoginPage extends PageObject implements IWebPage {
     public LoginPage () throws Exception {
         this(10000);

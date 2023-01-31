@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 import pages.InventoryPage;
+import skynet.hooks.JUnit5.TestrailPublisherExtension;
 
 import static utils.User.STANDARD_USER;
 
@@ -18,12 +19,12 @@ import static utils.User.STANDARD_USER;
 
  @ TestrailPublisher annotation before your class declaration OR add TestRailPublisherExtension.class to @ExtendWith annotation */
 
-//@TestrailPublisher
-@ExtendWith (SerenityJUnit5Extension.class)
+@ExtendWith ({ SerenityJUnit5Extension.class, TestrailPublisherExtension.class })
 @DisplayName ("My test suite")
 public class WhenLoggingInTest {
 
-    @Managed//    @Managed(driver = "chrome")
+//    @Managed(driver = "appium")
+    @Managed
     WebDriver driver;
     @Steps
     LoginActions login;
@@ -31,7 +32,7 @@ public class WhenLoggingInTest {
 
 
     @Test
-    @DisplayName ("1562447 - This is my first test")
+    @DisplayName ("1563818 - This is my first test")
     public void usersCanLogOnViaTheHomePage() throws Exception {
 
         login.as(STANDARD_USER);
@@ -41,7 +42,7 @@ public class WhenLoggingInTest {
     }
 
     @Test
-    @DisplayName ("1562448 - This is my first test")
+    @DisplayName ("1563819 - This is my first test")
     public void usersCanSeeProductPage() throws Exception {
 
         login.as(STANDARD_USER);
@@ -51,7 +52,7 @@ public class WhenLoggingInTest {
     }
 
     @Test
-    @DisplayName ("1562449 - This is my first test")
+    @DisplayName ("1563820 - This is my first test")
     public void usersCanFailTests() throws Exception {
 
         login.as(STANDARD_USER);
