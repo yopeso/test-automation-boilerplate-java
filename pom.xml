@@ -48,7 +48,7 @@
         <dependency>
             <groupId>com.skynet.testrail.publisher</groupId>
             <artifactId>skynet-testrail-publisher</artifactId>
-            <version>1.0.102</version>
+            <version>1.0.103</version>
         </dependency>
         <dependency>
             <groupId>com.skynet.api.framework.java</groupId>
