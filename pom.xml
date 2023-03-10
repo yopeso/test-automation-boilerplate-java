@@ -6,7 +6,7 @@
 
     <groupId>org.yopeso.template</groupId>
     <artifactId>test-automation-boilerplate-java</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
@@ -28,6 +28,11 @@
 
     <repositories>
         <repository>
+            <id>github-ui</id>
+            <name>Skynet JAVA Github Apache Maven Package</name>
+            <url>https://maven.pkg.github.com/yopeso/skynet-framework-java</url>
+        </repository>
+        <repository>
             <id>github-api</id>
             <name>Skynet JAVA Github Apache Maven Package</name>
             <url>https://maven.pkg.github.com/yopeso/skynet-api-framework-java</url>
@@ -43,17 +48,17 @@
         <dependency>
             <groupId>com.skynet.framework.java</groupId>
             <artifactId>skynet-framework-java</artifactId>
-            <version>1.0.106</version>
+            <version>1.0.202</version>
         </dependency>
         <dependency>
             <groupId>com.skynet.testrail.publisher</groupId>
             <artifactId>skynet-testrail-publisher</artifactId>
-            <version>1.0.103</version>
+            <version>1.0.104</version>
         </dependency>
         <dependency>
             <groupId>com.skynet.api.framework.java</groupId>
             <artifactId>skynet-api-framework-java</artifactId>
-            <version>1.0.126</version>
+            <version>1.0.129</version>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
