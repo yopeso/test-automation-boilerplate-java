@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
 
     <activeProfiles>
         <activeProfile>github</activeProfile>
+        <activeProfile>github-ui</activeProfile>
+        <activeProfile>github-api</activeProfile>
+        <activeProfile>github-testrail</activeProfile>
     </activeProfiles>
 
     <profiles>
@@ -15,17 +18,42 @@
                 <repository>
                     <id>central</id>
                     <url>https://repo1.maven.org/maven2</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
                 </repository>
+            </repositories>
+        </profile>
+        <profile>
+            <id>github-ui</id>
+            <repositories>
                 <repository>
                     <id>github</id>
                     <name>Skynet JAVA Github Apache Maven Package</name>
                     <url>https://maven.pkg.github.com/yopeso/skynet-framework-java</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+        <profile>
+            <id>github-api</id>
+            <repositories>
+                <repository>
+                    <id>github-api</id>
+                    <name>Skynet JAVA Github Apache Maven Package</name>
+                    <url>https://maven.pkg.github.com/yopeso/skynet-api-framework-java</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+        <profile>
+            <id>github-testrail</id>
+            <repositories>
+                <repository>
+                    <id>github-testrail</id>
+                    <name>Skynet JAVA Github Apache Maven Package</name>
+                    <url>https://maven.pkg.github.com/yopeso/skynet-testrail-publisher</url>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
@@ -37,6 +65,21 @@
     <servers>
         <server>
             <id>github</id>
+            <username>leonardmustatea</username>
+            <password>${GITHUB_ACCESS_TOKEN}</password>
+        </server>
+        <server>
+            <id>github-ui</id>
+            <username>leonardmustatea</username>
+            <password>${GITHUB_ACCESS_TOKEN}</password>
+        </server>
+        <server>
+            <id>github-api</id>
+            <username>leonardmustatea</username>
+            <password>${GITHUB_ACCESS_TOKEN}</password>
+        </server>
+        <server>
+            <id>github-testrail</id>
             <username>leonardmustatea</username>
             <password>${GITHUB_ACCESS_TOKEN}</password>
         </server>

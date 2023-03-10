@@ -1,8 +1,6 @@
 package serenityswag.authentication;
 
 
-import skynet.hooks.JUnit5.TestrailPublisher;
-import steps.LoginSteps;
 import actions.InventoryPage;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.thucydides.core.annotations.Managed;
@@ -11,6 +9,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
+import skynet.hooks.JUnit5.TestrailPublisher;
+import steps.LoginSteps;
 
 import static utils.User.STANDARD_USER;
 
@@ -24,7 +24,7 @@ import static utils.User.STANDARD_USER;
 @DisplayName ("My test suite")
 public class WhenLoggingOnTest {
 
-//    @Managed(driver = "appium")
+    //    @Managed(driver = "appium")
     @Managed
     WebDriver driver;
     @Steps

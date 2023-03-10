@@ -11,12 +11,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: com.skynet.framework.java:skynet-framework-java:1.0.106" level="project" />
+    <orderEntry type="library" name="Maven: com.skynet.framework.java:skynet-framework-java:1.0.201" level="project" />
     <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-api:5.9.0" level="project" />
     <orderEntry type="library" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.9.0" level="project" />
     <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />
-    <orderEntry type="library" name="Maven: com.skynet.testrail.publisher:skynet-testrail-publisher:1.0.103" level="project" />
+    <orderEntry type="library" name="Maven: com.skynet.testrail.publisher:skynet-testrail-publisher:1.0.104" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:31.1-jre" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:failureaccess:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" level="project" />
@@ -25,7 +25,7 @@
     <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.11.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.j2objc:j2objc-annotations:1.3" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
-    <orderEntry type="library" name="Maven: com.skynet.api.framework.java:skynet-api-framework-java:1.0.126" level="project" />
+    <orderEntry type="library" name="Maven: com.skynet.api.framework.java:skynet-api-framework-java:1.0.129" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-api:2.18.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.18.0" level="project" />
     <orderEntry type="library" name="Maven: io.openapitools.jackson.dataformat:jackson-dataformat-hal:1.0.9" level="project" />
@@ -186,8 +186,8 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.junit.platform:junit-platform-launcher:1.9.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.serenity-bdd:serenity-screenplay:3.3.7" level="project" />
     <orderEntry type="library" name="Maven: io.appium:java-client:8.3.0" level="project" />
-    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-api:4.8.0" level="project" />
-    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-remote-driver:4.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-api:4.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-remote-driver:4.8.1" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.87.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec-http:4.1.87.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.87.Final" level="project" />
@@ -222,10 +222,10 @@
     <orderEntry type="library" name="Maven: io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.60.Final" level="project" />
     <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.3" level="project" />
     <orderEntry type="library" name="Maven: com.typesafe.netty:netty-reactive-streams:2.0.4" level="project" />
-    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-http:4.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-http:4.8.1" level="project" />
     <orderEntry type="library" name="Maven: dev.failsafe:failsafe:3.3.0" level="project" />
-    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-manager:4.8.0" level="project" />
-    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-support:4.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-manager:4.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-support:4.8.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: cglib:cglib:3.3.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.ow2.asm:asm:7.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: commons-validator:commons-validator:1.7" level="project" />
