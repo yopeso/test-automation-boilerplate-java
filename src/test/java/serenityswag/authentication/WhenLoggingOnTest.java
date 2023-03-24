@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
+import skynet.hooks.JUnit5.JUnitHooks;
 import skynet.hooks.JUnit5.TestrailPublisher;
 import steps.LoginSteps;
 
@@ -20,6 +21,7 @@ import static utils.User.STANDARD_USER;
  @ TestrailPublisher annotation before your class declaration OR add TestRailPublisherExtension.class to @ExtendWith annotation */
 
 @TestrailPublisher
+@ExtendWith (JUnitHooks.class)
 @ExtendWith (SerenityJUnit5Extension.class)
 @DisplayName ("My test suite")
 public class WhenLoggingOnTest {
