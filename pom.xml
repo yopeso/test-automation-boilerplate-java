@@ -12,7 +12,7 @@
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
 
-        <serenity.version>3.3.7</serenity.version>
+        <serenity.version>3.6.21</serenity.version>
         <junit5.version>5.9.0</junit5.version>
 
         <allure-maven.version>2.10.0</allure-maven.version>
@@ -25,7 +25,6 @@
         <webdriver.base.url></webdriver.base.url>
         <tags></tags>
     </properties>
-
     <repositories>
         <repository>
             <id>github-ui</id>
@@ -48,7 +47,12 @@
         <dependency>
             <groupId>com.skynet.framework.java</groupId>
             <artifactId>skynet-framework-java</artifactId>
-            <version>1.0.202</version>
+            <version>1.0.301</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.8.0</version>
         </dependency>
         <dependency>
             <groupId>com.skynet.testrail.publisher</groupId>
@@ -125,7 +129,7 @@
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
-            <version>3.3.7</version>
+            <version>${serenity.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -159,6 +163,18 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
             <version>${allure-junit5.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.saucelabs</groupId>
+            <artifactId>saucebindings-junit5</artifactId>
+            <version>1.0.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.saucelabs</groupId>
+            <artifactId>sauce_junit</artifactId>
+            <version>2.1.23</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
