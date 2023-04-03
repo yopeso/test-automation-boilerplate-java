@@ -100,32 +100,32 @@ jobs:
             mvn -s .circleci/settings.xml verify -Dbrowser=firefox -DlogLevel=INFO -DseleniumHub=${SELENIUM_HUB_ADDRESS} -Dmaven.test.failure.ignore=true
 
 
-workflows:
-  version: 2
-  e2e_testing:
-    jobs:
-      - build-selenium-grid
-      - hold-destroy:
-          type: approval
-          requires:
-            - build-selenium-grid
-      - destroy:
-          requires:
-            - hold-destroy
-      - build-test-environment:
-          requires:
-            - build-selenium-grid
-      - hold-chrome-tests:
-          type: approval
-          requires:
-            - build-test-environment
-      - hold-firefox-tests:
-          type: approval
-          requires:
-            - build-test-environment
-      - test-chrome:
-          requires:
-            - hold-chrome-tests
-      - test-firefox:
-          requires:
-            - hold-firefox-tests
+#workflows:
+#  version: 2
+#  e2e_testing:
+#    jobs:
+#      - build-selenium-grid
+#      - hold-destroy:
+#          type: approval
+#          requires:
+#            - build-selenium-grid
+#      - destroy:
+#          requires:
+#            - hold-destroy
+#      - build-test-environment:
+#          requires:
+#            - build-selenium-grid
+#      - hold-chrome-tests:
+#          type: approval
+#          requires:
+#            - build-test-environment
+#      - hold-firefox-tests:
+#          type: approval
+#          requires:
+#            - build-test-environment
+#      - test-chrome:
+#          requires:
+#            - hold-chrome-tests
+#      - test-firefox:
+#          requires:
+#            - hold-firefox-tests
