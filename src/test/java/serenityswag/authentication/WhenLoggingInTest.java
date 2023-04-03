@@ -1,7 +1,6 @@
 package serenityswag.authentication;
 
 
-import skynet.hooks.JUnit5.JUnitHooks;
 import steps.LoginSteps;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.thucydides.core.annotations.Managed;
@@ -20,7 +19,6 @@ import static utils.User.STANDARD_USER;
 
  @ TestrailPublisher annotation before your class declaration OR add TestRailPublisherExtension.class to @ExtendWith annotation */
 
-@ExtendWith (JUnitHooks.class)
 @ExtendWith ({ SerenityJUnit5Extension.class, TestrailPublisherExtension.class })
 @DisplayName ("My test suite")
 public class WhenLoggingInTest {
