@@ -57,12 +57,12 @@
         <dependency>
             <groupId>com.skynet.testrail.publisher</groupId>
             <artifactId>skynet-testrail-publisher</artifactId>
-            <version>1.0.104</version>
+            <version>1.0.105</version>
         </dependency>
         <dependency>
             <groupId>com.skynet.api.framework.java</groupId>
             <artifactId>skynet-api-framework-java</artifactId>
-            <version>1.0.129</version>
+            <version>1.0.130</version>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
