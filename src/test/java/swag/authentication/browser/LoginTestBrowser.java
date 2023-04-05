@@ -1,5 +1,6 @@
 package swag.authentication.browser;
 
+import com.skynet.testrail.hooks.TestrailPublisher;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,6 +13,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import skynet.hooks.JUnit5.JUnitHooks;
 import skynet.runner.WebDriverManager;
 
+@TestrailPublisher
 @ExtendWith(JUnitHooks.class)
 @DisplayName("My test suite")
 public class LoginTestBrowser {

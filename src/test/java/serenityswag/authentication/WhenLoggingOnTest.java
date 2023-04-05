@@ -9,7 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
-import skynet.hooks.JUnit5.TestrailPublisher;
+import com.skynet.testrail.hooks.TestrailPublisher;
 import steps.LoginSteps;
 
 import static utils.User.STANDARD_USER;
