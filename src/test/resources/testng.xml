@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Skynet Automation Test Run">
+    <test name="Skynet Automation Test Run" preserve-order="true" parallel="false" enabled="true">
+        <classes>
+            <class name="skynet.runner.TestNGRunner"/>
+        </classes>
+    </test>
+</suite>
