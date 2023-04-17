@@ -1,9 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Skynet Automation Test Run">
-    <test name="Skynet Automation Test Run" preserve-order="true" parallel="false" enabled="true">
+    <parameter name="TestrailPublisher" value="false" />
+    <test name="Skynet Test">
         <classes>
-            <class name="skynet.runner.TestNGRunner"/>
+            <class name="skynet.hooks.TestNG.TestNGHooks"></class>
         </classes>
     </test>
 </suite>

@@ -47,7 +47,7 @@
         <dependency>
             <groupId>com.skynet.framework.java</groupId>
             <artifactId>skynet-framework-java</artifactId>
-            <version>1.0.304</version>
+            <version>1.0.305</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -57,7 +57,7 @@
         <dependency>
             <groupId>com.skynet.testrail.publisher</groupId>
             <artifactId>skynet-testrail-publisher</artifactId>
-            <version>1.0.110</version>
+            <version>1.0.111</version>
         </dependency>
         <dependency>
             <groupId>com.skynet.api.framework.java</groupId>

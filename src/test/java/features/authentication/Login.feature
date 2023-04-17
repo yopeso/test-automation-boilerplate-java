@@ -1,7 +1,7 @@
 @Epic=authenticationTest
 Feature: Feature - Login
 
-  Scenario Outline: Scenario - 1562448 - Login successful
+  Scenario Outline: 1562447 - Successful login
     When user navigates to "https://www.saucedemo.com/"
     And user enter username "<user>"
     And user enter password "<password>"
@@ -11,3 +11,10 @@ Feature: Feature - Login
     Examples:
       | user          | password     |
       | standard_user | secret_sauce |
+
+  Scenario: 1562448 - Failed login
+    When user navigates to "https://www.saucedemo.com/"
+    And user enter username "standard_user"
+    And user enter password "secret_sauce"
+    And user tap on Login Button
+    Then user should see page title as "Swag"
