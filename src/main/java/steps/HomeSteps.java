@@ -1,5 +1,6 @@
 package steps;
 
+import com.skynet.testrail.testrail.Testrail;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -36,5 +37,29 @@ public class HomeSteps {
     public void shouldSeeCorrectPageTitleAs(String expectedTitle) {
         Logger.info("should see correct page title");
         Assert.assertEquals(WebDriverManager.getWebDriver().getTitle(), expectedTitle);
+    }
+
+    @When("user click on the Login text button")
+    public void clickOnLoginButton() throws Exception {
+        WebDriverManager.getAppiumDriver().findElement(By.id("textViewLogin")).click();
+        Logger.info("should see correct Login text button");
+    }
+
+    @Then("user click on the drop-down button")
+    public void clickOnDropDown() throws Exception {
+        WebDriverManager.getAppiumDriver().findElement(By.xpath("//android.widget.TextView[contains(@text,'Germany')]")).click();
+        Logger.info("should see correct Login text button");
+    }
+
+    @Then("user enter the username {string}")
+    public void user_enter_the_username(String email) {
+        WebDriverManager.getAppiumDriver().findElement(By.id("editTextEmail")).sendKeys(email);
+        Logger.info("enter username");
+    }
+
+    @Then("user enter the password {string}")
+    public void user_enter_the_password(String password) {
+        WebDriverManager.getAppiumDriver().findElement(By.id("editTextPassword")).sendKeys(password);
+        Logger.info("enter password");
     }
 }
