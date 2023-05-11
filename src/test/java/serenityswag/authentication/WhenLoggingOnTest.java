@@ -51,7 +51,7 @@ public class WhenLoggingOnTest {
     }
 
     @Test
-    @DisplayName ("1562449 - This is my first test")
+    @DisplayName ("1564437 - This is my first test")
     public void usersCanFailTests() throws Exception {
         login.as(STANDARD_USER);
 
@@ -60,7 +60,7 @@ public class WhenLoggingOnTest {
     }
 
     @Test
-    @DisplayName ("1563812 - This is my first test")
+    @DisplayName ("1564436 - This is my first test")
     public void usersCanSeeProductPageDuplicate() throws Exception {
         login.as(STANDARD_USER);
 

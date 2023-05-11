@@ -1,8 +1,10 @@
 @Epic=authenticationTest
 Feature: Feature - Web browser login
 
-  Scenario Outline: 1562447 - Successful login
+  Background:
     When user navigates to "https://www.saucedemo.com/"
+
+  Scenario Outline: 1562447 - Successful login
     And user enter username "<user>"
     And user enter password "<password>"
     And user tap on login Button
@@ -12,9 +14,12 @@ Feature: Feature - Web browser login
       | user          | password     |
       | standard_user | secret_sauce |
 
-  Scenario: 1562448 - Failed login
-    When user navigates to "https://www.saucedemo.com/"
+  Scenario Outline: 1562448 - Failed login
     And user enter username "standard_user"
-    And user enter password "secret_sauce"
+    And user enter password "secret_sauce2"
     And user tap on login Button
-    Then user should see page title as "Swag"
+    Then user should see error message displayed as "<message>"
+
+    Examples:
+    | message |
+    | Epic sadface: Username and password do not match any user in this service |

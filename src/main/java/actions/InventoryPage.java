@@ -20,7 +20,7 @@ public class InventoryPage extends BasePage implements IWebPage {
     }
 
     public void validatePageTitle() throws Exception {
-        AHCustomAsserts.VerifyEqual(getHeading(), "PRODUCTS", "The inventory page should be displayed with the correct title", "Landed on incorrect page", true);
+        AHCustomAsserts.VerifyEqual(getHeading(), "Products", "The inventory page should be displayed with the correct title", "Landed on incorrect page", true);
     }
 
     public void failValidatePageTitle() throws Exception {
