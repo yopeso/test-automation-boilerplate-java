@@ -4,17 +4,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import skynet.interactions.Elements;
 import skynet.interactions.Navigate;
-import skynet.runner.WebDriverManager;
 import skynet.utils.AHCustomAsserts;
 import skynet.utils.Logger;
 
 public class BrowserLoginSteps {
-
     @When("user navigates to {string}")
     public void navigateTo(String url) throws Exception {
         Navigate.visit(url, null);

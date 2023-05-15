@@ -1,5 +1,5 @@
 @Epic=authenticationTest
-Feature: Feature - Web browser login
+Feature: Feature - Android Web browser login
 
   Background:
     When user navigates to "https://www.saucedemo.com/"
@@ -23,5 +23,5 @@ Feature: Feature - Web browser login
     Then user should see error message displayed as "<message>"
 
     Examples:
-    | message |
-    | Epic sadface: Username and password do not match any user in this service |
+      | message |
+      | Epic sadface: Username and password do not match any user in this service |

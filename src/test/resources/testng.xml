@@ -4,7 +4,7 @@
     <parameter name="testrailPublisher" value="false" />
     <test name="Cucumber TestNG Tests">
         <classes>
-            <class name="skynet.hooks.TestNG.TestNGHooks"></class>
+            <class name="skynet.hooks.TestNG.TestNGHooks"/>
         </classes>
     </test>
 </suite>
