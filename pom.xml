@@ -47,12 +47,7 @@
         <dependency>
             <groupId>com.skynet.framework.java</groupId>
             <artifactId>skynet-framework-java</artifactId>
-            <version>1.0.306</version>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>4.8.0</version>
+            <version>1.0.30510</version>
         </dependency>
         <dependency>
             <groupId>com.skynet.testrail.publisher</groupId>
@@ -65,10 +60,24 @@
             <version>1.0.130</version>
         </dependency>
         <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-core</artifactId>
-            <version>${serenity.version}</version>
-            <scope>test</scope>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>6.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>6.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>6.1.1</version>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
