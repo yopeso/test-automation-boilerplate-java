@@ -86,15 +86,6 @@ public class iOSLoginSteps {
         AHCustomAsserts.VerifyEqual(actualTitle, expectedTitle, "The inventory page should be displayed with the correct title", "Landed on incorrect page", true);
     }
 
-//    @Then("user should see login not successful message pop up")
-//    public void shouldSeeLoginNotSuccessfulPopup() throws Exception {
-//        Logger.info("Should see login not successful message pop up");
-//        WebElement alertEl = Elements.findElement(By.id("Login nicht erfolgreich. Bitte prüfe E-Mailadresse und Passwort."));
-//        Wait.waitForVisible(alertEl);
-//        String alertMsg = "Login nicht erfolgreich. Bitte prüfe E-Mailadresse und Passwort.";
-//        AHCustomAsserts.VerifyEqual(alertEl.getText(), alertMsg, "The popup should be displayed with the correct alert message", "Displayed on incorrect message", true);
-//    }
-
     @Then("user should see alert message pop up as {string}")
     public void shouldSeeAlertMessagePopupAs(String message) throws Exception {
         Logger.info("Should see login not successful message pop up");
