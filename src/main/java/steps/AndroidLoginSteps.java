@@ -56,7 +56,7 @@ public class AndroidLoginSteps {
     @And("user tap on add later button")
     public void tapOnAddLaterButton() throws Exception {
         Logger.info("tap skip button");
-        WebElement el = Elements.findElement(By.id("de.limango.shop.beta:id/add_later_button"));
+        WebElement el = Elements.findElement(By.id("add_later_button"));
         el.click();
     }
 

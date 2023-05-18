@@ -30,8 +30,8 @@ public class BrowserLoginSteps {
         el.sendKeys(password);
     }
 
-    @When("user tap on login Button")
-    public void tapOnLoginButton() throws Exception {
+    @When("user click on login Button")
+    public void clickOnLoginButton() throws Exception {
         Logger.info("tap On Login Button");
         WebElement el = Elements.findElement(By.id("login-button"));
         el.click();

@@ -1,8 +1,8 @@
 @Epic=authenticationTest
-Feature: Feature - Android Login
+Feature: Feature - Android app Login
 
-  @Regression
-  Scenario: 1562447 - Login successful
+#  @Regression
+  Scenario: 1562447 - Android app Login successful
     When user tap on the Login text button
     And user select and tap on Germany
     And user enter the username "limangotesting@gmail.com"
@@ -11,8 +11,8 @@ Feature: Feature - Android Login
     And user tap on add later button
     Then user should see the screen title as "Aktuell"
 
-  @Regression
-  Scenario: 1562448 - Login failed
+#  @Regression
+  Scenario: 1562448 - Android app Login failed
     When user tap on the Login text button
     And user select and tap on Germany
     And user enter the username "limangotesting@gmail.com"

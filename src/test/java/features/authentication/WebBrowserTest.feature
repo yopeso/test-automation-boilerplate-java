@@ -5,10 +5,10 @@ Feature: Feature - Web browser login
     When user navigates to "https://www.saucedemo.com/"
 
 #  @Regression
-  Scenario Outline: 1562447 - Successful login
+  Scenario Outline: 1562447 - Web browser login successful
     And user enter username "<user>"
     And user enter password "<password>"
-    And user tap on login Button
+    And user click on login Button
     Then user should see page title as "Swag Labs"
 
     Examples:
@@ -16,10 +16,10 @@ Feature: Feature - Web browser login
       | standard_user | secret_sauce |
 
 #  @Regression
-  Scenario Outline: 1562448 - Failed login
+  Scenario Outline: 1562448 - Web browser login failed
     And user enter username "standard_user"
     And user enter password "secret_sauce2"
-    And user tap on login Button
+    And user click on login Button
     Then user should see error message displayed as "<message>"
 
     Examples:
