@@ -47,12 +47,12 @@
         <dependency>
             <groupId>com.skynet.framework.java</groupId>
             <artifactId>skynet-framework-java</artifactId>
-            <version>1.0.306</version>
+            <version>1.0.307</version>
         </dependency>
         <dependency>
             <groupId>com.skynet.testrail.publisher</groupId>
             <artifactId>skynet-testrail-publisher</artifactId>
-            <version>1.0.111</version>
+            <version>1.0.112</version>
         </dependency>
         <dependency>
             <groupId>com.skynet.api.framework.java</groupId>

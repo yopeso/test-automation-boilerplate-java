@@ -9,7 +9,7 @@ Feature: Feature - Web browser login
     And user enter username "<user>"
     And user enter password "<password>"
     And user click on login Button
-    Then user should see page title as "Swag Labs"
+    Then user should see page title as "Products"
 
     Examples:
       | user          | password     |

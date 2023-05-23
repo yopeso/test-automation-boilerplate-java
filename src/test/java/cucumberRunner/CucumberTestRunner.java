@@ -6,9 +6,8 @@ import skynet.hooks.TestNG.TestNGHooks;
 
 @CucumberOptions(
         features = {"./src/test/java/features"},
-        tags = "@Regression",
-        glue = {"steps"},
-        plugin = {"json:target/cucumber.json", "html:target/cucumber-reports.html"})
+//        tags = "@Regression",
+        glue = {"steps"})
 
 @Test
 public class CucumberTestRunner extends TestNGHooks {
