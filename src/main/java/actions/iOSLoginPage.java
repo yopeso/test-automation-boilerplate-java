@@ -15,9 +15,7 @@ public class iOSLoginPage {
     }
 
     public static void clickOnDropDown() throws Exception {
-        WebElement el = Elements.findElement(By.id("Deutschland"));
-        Wait.waitForClickable(el, 2000, false);
-        Clicks.click(el);
+        Clicks.click(Elements.findElement(By.id("Deutschland")));
     }
 
     public static void enterUsernameAs(String username) throws Exception {
@@ -63,7 +61,7 @@ public class iOSLoginPage {
     public static void shouldSeeAlertMessagePopupAs(String message) throws Exception {
         WebElement alertEl = Elements.findElement(By.xpath("//XCUIElementTypeAlert/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]"));
         Wait.waitForVisible(alertEl);
-        String actualText = alertEl.findElement(By.xpath("//XCUIElementTypeScrollView[1]/XCUIElementTypeOther[1]/XCUIElementTypeStaticText")).getText();
+        String actualText = Elements.getText(By.xpath("//XCUIElementTypeScrollView[1]/XCUIElementTypeOther[1]/XCUIElementTypeStaticText"));
         AHCustomAsserts.VerifyEqual(actualText, message, "The popup should be displayed with the correct alert message", "Displayed on incorrect message", true);
     }
 

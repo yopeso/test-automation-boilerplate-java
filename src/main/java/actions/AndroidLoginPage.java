@@ -1,7 +1,5 @@
 package actions;
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import skynet.interactions.Clicks;
@@ -9,9 +7,6 @@ import skynet.interactions.Elements;
 import skynet.interactions.Type;
 import skynet.interactions.Wait;
 import skynet.utils.AHCustomAsserts;
-import skynet.utils.Logger;
-
-import java.sql.ClientInfoStatus;
 
 public class AndroidLoginPage {
     public static void tapOnLoginButton() throws Exception {
@@ -23,9 +18,7 @@ public class AndroidLoginPage {
     }
 
     public static void userEnterUsername(String email) throws Exception {
-        WebElement el = Elements.findElement(By.id("editTextEmail"));
-        el.sendKeys(email);
-//        Type.text(Elements.findElement(By.id("editTextEmail")), email, true);
+        Type.text(Elements.findElement(By.id("editTextEmail")), email, true);
     }
 
     public static void userEnterPassword(String password) throws Exception {
@@ -53,11 +46,6 @@ public class AndroidLoginPage {
 
     public static void shouldSeeInvalidCredentialsMessageDisplayed() throws Exception {
         String actualText = Elements.getText(By.id("de.limango.shop.beta:id/snackbar_text"));
-//        WebElement el = Elements.findElement(By.id("de.limango.shop.beta:id/snackbar_text"));
-//        Wait.waitForVisible(el);
-//        String actualText = el.getText();
         AHCustomAsserts.VerifyEqual(actualText, "Ungültige Anmeldedaten", "The login page should be displayed with the correct message", "Displayed on incorrect text", true);
     }
-
-
 }

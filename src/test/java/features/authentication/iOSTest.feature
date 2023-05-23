@@ -26,5 +26,5 @@ Feature: Feature - iOS Login
     And user tap Ok button
 
     Examples:
-      | user                     | password          | message                                                          |
+      | user                     | password           | message                                                          |
       | limangotesting@gmail.com | testnomarketplace2 | Login nicht erfolgreich. Bitte prüfe E-Mailadresse und Passwort. |
