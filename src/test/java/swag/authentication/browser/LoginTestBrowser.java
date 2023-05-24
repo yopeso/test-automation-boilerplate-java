@@ -19,7 +19,7 @@ import skynet.runner.WebDriverManager;
 public class LoginTestBrowser {
 
     @Test
-    @DisplayName("1563812 - This is my first test - passed")
+    @DisplayName("1564436 - This is my first test - passed")
     public void userCanSeeThePageTitle() throws Exception {
         WebDriverManager.getWebDriver().navigate().to("https://www.saucedemo.com/");
         WebDriverManager.getWebDriver().findElement(By.id("user-name")).sendKeys("standard_user");
@@ -30,7 +30,7 @@ public class LoginTestBrowser {
     }
 
     @Test
-    @DisplayName("1563813 - This is my second test - failed")
+    @DisplayName("1564437 - This is my second test - failed")
     public void userCannotSeeThePageTitle() throws Exception {
         WebDriverManager.getWebDriver().get("https://www.saucedemo.com/");
         WebDriverManager.getWebDriver().findElement(By.id("user-name")).sendKeys("standard_user");

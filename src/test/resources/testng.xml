@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Skynet Automation Test Run">
+    <parameter name="testrailPublisher" value="false" />
+    <test name="Cucumber TestNG Tests">
+        <classes>
+            <class name="cucumberRunner.CucumberTestRunner"/>
+        </classes>
+    </test>
+</suite>
