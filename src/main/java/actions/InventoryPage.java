@@ -1,6 +1,5 @@
 package actions;
 
-import org.openqa.selenium.By;
 import skynet.interactions.Elements;
 import skynet.interactions.Wait;
 import skynet.interfaces.IWebPage;
@@ -38,7 +37,7 @@ public class InventoryPage extends BasePage implements IWebPage {
     }
 
     public static void shouldSeePageTitleAs(String expectedTitle) throws Exception {
-        String actualTitle = Elements.getText(By.className("title"));
+        String actualTitle = Elements.getText(InventoryPageRepo.RepositoryEnum.PageTitle);
         AHCustomAsserts.VerifyEqual(actualTitle, expectedTitle, "The inventory page should be displayed with the correct title", "Landed on incorrect page", true);
     }
 }

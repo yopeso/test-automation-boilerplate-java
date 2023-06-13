@@ -1,7 +1,7 @@
 @Epic=authenticationTest
 Feature: Feature - iOS Login
 
-  @Regression
+#  @Regression
   Scenario Outline: 1562447 - iOS app login successful
     When user tap onboarding login button
     And user select and tap Deutschland

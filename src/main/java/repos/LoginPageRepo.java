@@ -22,7 +22,9 @@ public class LoginPageRepo {
         EmailField("css", "[data-test='username']"),
         NoEmailField("css", "[data-test='usernames']"),
         PasswordField("css", "[data-test='password']"),
-        LoginButton("css", "[data-test='login-button']");
+        LoginButton("css", "[data-test='login-button']"),
+        ErrorMessageContainer("className", "error-message-container"),
+        ErrorAlert("xpath", "//*[@data-test='error']");
 
         private final String by;
         private final String selector;

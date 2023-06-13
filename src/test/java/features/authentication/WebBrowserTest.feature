@@ -4,7 +4,7 @@ Feature: Feature - Web browser login
   Background:
     When user navigates to "https://www.saucedemo.com/"
 
-#  @Regression
+  @Regression
   Scenario Outline: 1562447 - Web browser login successful
     And user enter username "<user>"
     And user enter password "<password>"
@@ -15,7 +15,7 @@ Feature: Feature - Web browser login
       | user          | password     |
       | standard_user | secret_sauce |
 
-#  @Regression
+  @Regression
   Scenario Outline: 1562448 - Web browser login failed
     And user enter username "standard_user"
     And user enter password "secret_sauce2"
