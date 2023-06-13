@@ -1,7 +1,5 @@
 package actions;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import skynet.interactions.*;
 import skynet.interfaces.IWebPage;
 import repos.LoginPageRepo;
@@ -47,11 +45,11 @@ public class LoginPage extends BasePage implements IWebPage {
     }
 
     public static void enterUsernameAs(String username) throws Exception {
-        Type.text(Elements.findElement(By.id("user-name")), username);
+        Type.text(LoginPageRepo.RepositoryEnum.EmailField, username);
     }
 
     public static void enterPasswordAs(String password) throws Exception {
-        Type.text(Elements.findElement(By.id("password")), password);
+        Type.text(LoginPageRepo.RepositoryEnum.PasswordField, password);
     }
 
     public static void clickOnLoginButton() throws Exception {
@@ -59,8 +57,8 @@ public class LoginPage extends BasePage implements IWebPage {
     }
 
     public static void shouldSeeAnErrorMessageDisplayed(String expectedMessage) throws Exception {
-        WebElement el = Elements.findElement(By.className("error-message-container"));
-        el.findElement(By.xpath("//*[@data-test=\"error\"]"));
-        AHCustomAsserts.VerifyEqual(el.getText(), expectedMessage, "The error should displayed with the correct message", "Displayed an incorrect error message", true);
+        Wait.waitForExists(LoginPageRepo.RepositoryEnum.ErrorMessageContainer, 10, false);
+        String actualMessage = Elements.getText(LoginPageRepo.RepositoryEnum.ErrorAlert);
+        AHCustomAsserts.VerifyEqual(actualMessage, expectedMessage, "The error should displayed with the correct message", "Displayed an incorrect error message", true);
     }
 }
